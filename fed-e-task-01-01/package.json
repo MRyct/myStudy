@@ -12,6 +12,7 @@
   "dependencies": {
     "global": "^4.4.0",
     "html-webpack-plugin": "^4.3.0",
+    "lodash": "^4.17.20",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
