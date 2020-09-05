@@ -33,14 +33,24 @@ export.foor = parallel(task1, task2, task3) //并行
 ##### 五、异步任务
 
 - 回调函数
-
 - Promise
-
 - async await
-
 - stream 
 
-  
+```javascript
+export.stream = done => {
+  	// 创建文件读取流  
+    const readStream = fs.createReasStream('package.json')
+    // 创建文件写入流  写入temp.txt
+    const writeStream = fs.createWriteStream('temp.txt')
+    readStream.pipe(writeStream)
+    readStream.on('end', () => {
+        done()
+    })
+}
+```
+
+
 
 ##### 六、核心工作原理
 
