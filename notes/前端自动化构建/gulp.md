@@ -58,7 +58,13 @@ export.foor = parallel(task1, task2, task3) //并行
 
 ##### 六、核心工作原理
 
+
+
 `gulp`是基于<font color=red>流-stream</font>的构建系统 （The streaming build system）, 因此`stream`可以说是gulp核心
+
+
+
+
 
 ![gulp文件流](../images/gulp文件流.png)
 
@@ -67,6 +73,8 @@ export.foor = parallel(task1, task2, task3) //并行
 - Transfrom 转换
 
 > 相当于就是 `输入` — `加工` — `输出`
+
+
 
 ```javascript
 const fs = require('fs')
@@ -92,6 +100,8 @@ exports.default = () => {
     .pipe(write) // 写入
 }
 ```
+
+
 
 ##### 七、文件操作Api
 
