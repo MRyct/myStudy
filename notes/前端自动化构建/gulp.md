@@ -66,8 +66,6 @@ export.foor = parallel(task1, task2, task3) //并行
 
 
 
-![gulp文件流](../images/gulp文件流.png)
-
 - createReadStream 创建读取流
 - createWriteStream 创建写入流
 - Transfrom 转换
