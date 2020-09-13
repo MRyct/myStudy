@@ -1,6 +1,9 @@
 ### grunt
-
-##### 一、常用插件及总结
+##### 一、构建步骤
+- npm init 初始化项目
+- 创建gruntfile.js入口文件
+- 通过`grunt.registerTask` 注册任务 
+##### 二、常用插件及总结
 
 **插件**
 

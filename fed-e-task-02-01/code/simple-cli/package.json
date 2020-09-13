@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "bin": {
-    "self-cli": "cli.js"
-  },
+  "bin": "cli.js",
   "devDependencies": {
     "ejs": "^3.1.5",
     "fs": "^0.0.1-security",
