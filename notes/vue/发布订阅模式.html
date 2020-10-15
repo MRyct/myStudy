@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布订阅模式</title>
+</head>
+<body>
+    <script>
+        // 事件处理器
+        class EventEmitter {
+            constructor() {
+                this.subs = Object.create(null)
+            }
+            // 注册事件
+            // event 事件名  
+            // handler 事件处理函数
+            $on(event, handler) {
+                this.subs[event] = this.subs[event] || []
+                this.subs[event].push(handler)
+            }
+            // 处理事件
+            // 1.判断当前事件是否存在处理方法
+            // 2.出发对应事件的所有处理方法
+            $emit(event) {
+                if(this.subs[event]) {
+                    this.subs[event].forEach(handler => {
+                        handler()
+                    })
+                }
+            }
+        }
+    </script>
+</body>
+</html>
