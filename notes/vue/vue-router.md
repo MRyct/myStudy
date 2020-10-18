@@ -2,17 +2,20 @@
 
 ##### 一、hash 模式和 history模式的区别
 
-- 表现形式
+- hash
 
-  - hash url中有`#`， https://xxx.xxx.com/#/list?id=1111
-  - history url就是一个正常的url地址  https://xxx.xxx.com/list/1111
-
-- 原理
-
+  - URL 中#后面的内容作为路径地址
+  - hash url中有`#`， https://xxx.xxx.com/#/list?id=1111\
   - hash 是基于锚点，以及onhashchange事件
+  - 
+
+- history
+
+  - history url就是一个正常的url地址  https://xxx.xxx.com/list/1111
   - history 是基于HTML5中的history API
     - history.pushState() (IE10以后才支持)
     - history.replaceState()
+  - 监听 popstate 事件
 
 - nodejs 配置history模式
 
@@ -28,7 +31,7 @@
 
 - 将Vue构造函数记录到全局变量
 
-- 把创建Vue实力时候传入的router对象注入到Vue实力上
+- 把创建Vue实例时候传入的router对象注入到Vue实例上
 
 - 混入
 
@@ -74,12 +77,12 @@
 
   ##### 四、createRouteMap
   > 遍历所有的路由规则`routes`并解析存入到routeMap对象中
-  ``` javascript
-  createMap(){
-  this.options.routes.forEach(route =>{
-   this.routeMap[route.path] = route.component
-  })
-  ```
+  > ``` javascript
+  > createMap(){
+  > this.options.routes.forEach(route =>{
+  > this.routeMap[route.path] = route.component
+  > })
+  > ```
 
   ##### 五、initComponents
   - 传入vue 对象
@@ -163,6 +166,3 @@
       })
   }
   ```
-
-  
-

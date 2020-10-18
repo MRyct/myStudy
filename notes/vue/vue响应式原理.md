@@ -217,6 +217,10 @@ dep.notify()
                 attrName = attrName.substr(2)
                 let key = attr.value // 变量名 例：v-text="msg"
                 this.update(node, key, attrName)
+                // 判断是否是处理事件指令
+                if(this.isEventDirective(attrName)) {
+                    this.eventHandler(node, this.vm, attrName, key)
+                }
             }
         })
     }
@@ -309,6 +313,26 @@ dep.notify()
   // 判断节点是否是元素节点
   isElementNode(node) {
       return node.nodeType === 1
+  }
+  ```
+
+- isEventDirective(attrName)判断是否是处理事件指令
+
+  ```javascript
+  // 判断是否是处理事件指令
+  isEventDirective(attrName) {
+      return attrName.indexOf('on') === 0
+  }
+  ```
+
+- eventHandler(node, vm, attrName, fnName)   处理事件指令并调用对应的方法
+
+  ```javascript
+  // 处理事件指令并调用对应的方法
+  eventHandler(node, vm, attrName, fnName) {
+      let eventType = attrName.substr(attrName.indexOf(':') + 1)
+      let fn = vm.$options.methods && vm.$options.methods[fnName]
+      fn && node.addEventListener(eventType, fn.bind(this.vm))
   }
   ```
 
