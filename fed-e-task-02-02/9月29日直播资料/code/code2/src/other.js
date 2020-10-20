@@ -1,0 +1,1 @@
+module.exports = 'ZCE是一个老男人'
